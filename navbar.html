@@ -25,6 +25,7 @@
         padding-top: 15px;
         position: fixed;
         top: 0;
+        z-index: 1;
       }
 
       #sidemenu_brandlogo {
@@ -54,6 +55,7 @@
         font-weight: normal;
         font-family: Arial, Helvetica, sans-serif;
         margin-right: 30px;
+        cursor: pointer;
       }
       #cartimage {
         height: 190%;
@@ -66,6 +68,7 @@
       }
       #cartimage img {
         height: 100%;
+        cursor: pointer;
       }
       #cartimage p {
         position: absolute;
@@ -81,46 +84,149 @@
         font-weight: bold;
         padding-bottom: 5px;
         background-color: transparent;
-      }
-      #brandlogo {
-        border: 1px solid;
         cursor: pointer;
-        height: 100px;
+      }
+      .brandlogo {
+        /* border: 1px solid; */
+        cursor: pointer;
+        width: 30px;
       }
       #brandlogo img {
-        width: auto;
+        width: 100%;
         height: 80px;
         margin-left: 40px;
         border: 1px solid;
       }
+      .logo {
+        width: 200px;
+        margin-left: 30px;
+      }
       #sidebar {
-        /* position: absolute;
-        top: 0; */
         width: 30%;
         height: 100vh;
         border: 1px solid;
-        background-color: white;
         display: none;
+        background-color: white;
+        position: absolute;
         position: fixed;
         padding-top: 15px;
+        z-index: 2;
       }
-      #close {
-        height: 30px;
-        border: 1px solid;
+      #close_logo {
+        width: 100%;
+        height: 100px;
+        /* border: 1px solid; */
+        display: flex;
+      }
+      #head_details {
+        width: 100%;
+        height: 100vh;
+        /* border: 1px solid; */
+      }
+      #close_btn {
         font-size: 50px;
         transform: rotate(45deg);
-        margin-top: 20px;
-        margin-left: 20px;
+        margin-right: 10px;
         cursor: pointer;
       }
-      #divforflex {
+      #headDetails ul {
         display: flex;
-        height: 100px;
-        border: 1px solid;
+        list-style: none;
+        margin-left: 40px;
+        padding-top: 30px;
       }
-      #head-content {
+      #headDetails ul li {
+        margin-right: 20px;
+        cursor: pointer;
+      }
+      #sidemenudata {
         width: 100%;
-        border: 1px solid;
+        height: 100vh;
+        /* border: 5px solid; */
+        background-color: transparent;
+      }
+      #sidemenudata-women {
+        width: 100%;
+        height: 400px;
+        background-color: transparent;
+        display: none;
+        color: black;
+
+        margin-top: 50px;
+      }
+
+      #sidemenudata-women ul {
+        width: 100%;
+        font-size: 13px;
+        list-style: none;
+        margin-left: 60px;
+        overflow: scroll;
+
+        padding: 10px 0px;
+      }
+      #sidemenudata-women ul li {
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+      #sidemenudata-women ul li:last-child {
+        padding: 10px;
+        background-color: yellow;
+      }
+      #sidemenudata-men ul li:last-child {
+        padding: 10px;
+        background-color: yellow;
+      }
+      #sidemenudata-kid ul li:last-child {
+        padding: 10px;
+        background-color: yellow;
+      }
+      #sidemenudata-men {
+        width: 100%;
+        height: 400px;
+        background-color: transparent;
+        display: none;
+        color: black;
+        margin-top: 50px;
+      }
+      #sidemenudata-men ul {
+        width: 100%;
+        font-size: 13px;
+        list-style: none;
+        margin-left: 60px;
+        overflow: scroll;
+
+        padding: 10px 0px;
+      }
+      #sidemenudata-men ul li {
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+      #sidemenudata-kid {
+        width: 100%;
+        height: 400px;
+        background-color: transparent;
+        display: none;
+        color: black;
+        margin-top: 50px;
+      }
+      #sidemenudata-kid ul {
+        width: 100%;
+        font-size: 13px;
+        list-style: none;
+        margin-left: 60px;
+        overflow: scroll;
+
+        padding: 10px 0px;
+      }
+      #sidemenudata-kid ul li {
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+      #content img {
+        width: 900px;
+      }
+      #content {
+        z-index: -2;
       }
     </style>
   </head>
@@ -130,8 +236,8 @@
         <div onclick="showsidemenu()" id="sidemenu">
           <span class="fas fa-bars"></span>
         </div>
-        <div id="brandlogo">
-          <img id="brandLogo" src="./logo.png" alt="" />
+        <div class="brandlogo">
+          <img class="logo" src="./logo.png" alt="" />
         </div>
       </div>
       <div id="search_cart">
@@ -151,20 +257,92 @@
     </div>
 
     <div id="sidebar">
-      <div id="divforflex">
-        <div onclick="closesidemenu()" id="close">+</div>
-        <div id="brandlogo">
-          <img id="brandLogoside" src="./logo.png" alt="" />
+      <div id="close_logo">
+        <div id="close_btn" onclick="closesidemenu()">+</div>
+        <div class="brandlogo">
+          <img class="logo" src="./logo.png" alt="" />
         </div>
       </div>
-      <div id="head-content"></div>
+      <div id="head_details">
+        <div id="headDetails">
+          <ul>
+            <li onclick="womensidebar()">WOMEN</li>
+            <li onclick="mensidebar()">MEN</li>
+            <li onclick="kidsidebar()">KIDS</li>
+          </ul>
+        </div>
+        <div id="sidemenudata">
+          <div id="sidemenudata-women">
+            <ul>
+              <li>NEW</li>
+              <li>BASICS</li>
+              <li>DRESSES | JUMPSUITS</li>
+              <li>SHIRTS</li>
+              <li>TROUSERS</li>
+              <li>TOPS | CORSETS</li>
+              <li>JEANS</li>
+              <li>T-SHIRTS</li>
+              <li>BODYSUITS</li>
+              <li>BLAZERS</li>
+              <li>JACKETS</li>
+              <li>KNITWEAR</li>
+              <li>SKIRTS</li>
+              <li>SHORTS | SKORTS</li>
+              <li>SUITS</li>
+              <li>CO-ORD SETS</li>
+              <li>SHOES</li>
+              <li>BAGS</li>
+              <li>SWIMWEAR</li>
+              <li>ACCESSORIES</li>
+              <li>PERFUMES</li>
+              <li>SALE</li>
+            </ul>
+          </div>
+          <div id="sidemenudata-men">
+            <ul>
+              <li>NEW</li>
+
+              <li>ZARA ATHLETICS</li>
+              <li>BASICS</li>
+              <li>SHIRTS</li>
+              <li>TROUSERS</li>
+              <li>TRENDS</li>
+              <li>JEANS</li>
+              <li>T-SHIRTS</li>
+              <li>POLO SHIRTS</li>
+              <li>BLAZERS</li>
+              <li>JACKETS</li>
+              <!-- <li>KNITWEAR</li> -->
+              <li>SKIRTS</li>
+              <li>SHORTS | SKORTS</li>
+              <li>SUITS</li>
+              <!-- <li>CO-ORD SETS</li> -->
+              <li>SHOES</li>
+              <!-- <li>BAGS</li> -->
+              <li>SWIMWEAR</li>
+              <li>ACCESSORIES</li>
+              <!-- <li>PERFUMES</li> -->
+              <li>SALE</li>
+            </ul>
+          </div>
+          <div id="sidemenudata-kid">
+            <ul>
+              <li>GIRL | 6-14 YEARS</li>
+              <li>BOY | 6-14 YEAR</li>
+              <li>BABY GIRL | 6 MONTHS-5 YEARS</li>
+              <li>BABY BOY | 6 MONTHS - 5 YEARS</li>
+              <li>ACCESSORIES</li>
+              <li>SALE</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
     <div id="content">
       <img
         src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-man-new/subhome-xmedia-28-03//w/1366/IMAGE-landscape-fill-dfef3e6a-2e27-4ea7-b049-238695831147-default_0.jpg?ts=1657819076668"
         alt=""
-      />
-      <img
+      /><img
         src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-man-new/subhome-xmedia-28-03//w/1366/IMAGE-landscape-fill-dfef3e6a-2e27-4ea7-b049-238695831147-default_0.jpg?ts=1657819076668"
         alt=""
       />
@@ -174,8 +352,24 @@
 <script>
   function showsidemenu() {
     document.getElementById("sidebar").style.display = "grid";
+    document.getElementById("content").style.scroll = "";
   }
   function closesidemenu() {
     document.getElementById("sidebar").style.display = "none";
+  }
+  function womensidebar() {
+    document.getElementById("sidemenudata-women").style.display = "flex";
+    document.getElementById("sidemenudata-men").style.display = "none";
+    document.getElementById("sidemenudata-kid").style.display = "none";
+  }
+  function mensidebar() {
+    document.getElementById("sidemenudata-men").style.display = "flex";
+    document.getElementById("sidemenudata-women").style.display = "none";
+    document.getElementById("sidemenudata-kid").style.display = "none";
+  }
+  function kidsidebar() {
+    document.getElementById("sidemenudata-kid").style.display = "flex";
+    document.getElementById("sidemenudata-women").style.display = "none";
+    document.getElementById("sidemenudata-men").style.display = "none";
   }
 </script>
