@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0%;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      #navbar {
+        width: 100%;
+        height: 100px;
+
+        display: flex;
+        justify-content: space-between;
+        padding-top: 15px;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+      }
+
+      #sidemenu_brandlogo {
+        width: 30%;
+        height: 100%;
+
+        margin-left: 20px;
+        display: flex;
+      }
+      #sidemenu {
+        height: 100%;
+        width: 30px;
+      }
+      #sidemenu span {
+        font-size: 25px;
+        cursor: pointer;
+      }
+      #search_cart {
+        height: 20%;
+        display: flex;
+        margin-top: 10px;
+        align-items: center;
+        margin-right: 20px;
+      }
+      #search_cart h2 {
+        font-size: 14px;
+        font-weight: normal;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-right: 30px;
+        cursor: pointer;
+      }
+      #cartimage {
+        height: 190%;
+
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      #cartimage img {
+        height: 100%;
+        cursor: pointer;
+      }
+      #cartimage p {
+        position: absolute;
+        padding-top: 10px;
+      }
+      #searchonnav {
+        width: 60%;
+        font-size: 12px;
+        height: 100%;
+        border: none;
+        border-bottom: 1px solid;
+        margin-right: 30%;
+        font-weight: bold;
+        padding-bottom: 5px;
+        background-color: transparent;
+        cursor: pointer;
+      }
+      .brandlogo {
+        /* border: 1px solid; */
+        cursor: pointer;
+        width: 30px;
+      }
+      #brandlogo img {
+        width: 100%;
+        height: 80px;
+        margin-left: 40px;
+        border: 1px solid;
+      }
+      .logo {
+        width: 200px;
+        margin-left: 30px;
+      }
+      #sidebar {
+        width: 30%;
+        height: 100vh;
+        border: 1px solid;
+        display: none;
+        background-color: white;
+        position: absolute;
+        position: fixed;
+        padding-top: 15px;
+        z-index: 2;
+      }
+      #close_logo {
+        width: 100%;
+        height: 100px;
+        /* border: 1px solid; */
+        display: flex;
+      }
+      #head_details {
+        width: 100%;
+        height: 100vh;
+        /* border: 1px solid; */
+      }
+      #close_btn {
+        font-size: 50px;
+        transform: rotate(45deg);
+        margin-right: 10px;
+        cursor: pointer;
+      }
+      #headDetails ul {
+        display: flex;
+        list-style: none;
+        margin-left: 40px;
+        padding-top: 30px;
+      }
+      #headDetails ul li {
+        margin-right: 20px;
+        cursor: pointer;
+      }
+      #sidemenudata {
+        width: 100%;
+        height: 100vh;
+        /* border: 5px solid; */
+        background-color: transparent;
+      }
+      #sidemenudata-women {
+        width: 100%;
+        height: 400px;
+        background-color: transparent;
+        display: none;
+        color: black;
+
+        margin-top: 50px;
+      }
+
+      #sidemenudata-women ul {
+        width: 100%;
+        font-size: 13px;
+        list-style: none;
+        margin-left: 60px;
+        overflow: scroll;
+
+        padding: 10px 0px;
+      }
+      #sidemenudata-women ul li {
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+      #sidemenudata-women ul li:last-child {
+        padding: 10px;
+        background-color: yellow;
+      }
+      #sidemenudata-men ul li:last-child {
+        padding: 10px;
+        background-color: yellow;
+      }
+      #sidemenudata-kid ul li:last-child {
+        padding: 10px;
+        background-color: yellow;
+      }
+      #sidemenudata-men {
+        width: 100%;
+        height: 400px;
+        background-color: transparent;
+        display: none;
+        color: black;
+        margin-top: 50px;
+      }
+      #sidemenudata-men ul {
+        width: 100%;
+        font-size: 13px;
+        list-style: none;
+        margin-left: 60px;
+        overflow: scroll;
+
+        padding: 10px 0px;
+      }
+      #sidemenudata-men ul li {
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+      #sidemenudata-kid {
+        width: 100%;
+        height: 400px;
+        background-color: transparent;
+        display: none;
+        color: black;
+        margin-top: 50px;
+      }
+      #sidemenudata-kid ul {
+        width: 100%;
+        font-size: 13px;
+        list-style: none;
+        margin-left: 60px;
+        overflow: scroll;
+
+        padding: 10px 0px;
+      }
+      #sidemenudata-kid ul li {
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+      #content img {
+        width: 900px;
+      }
+      #content {
+        z-index: -2;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      <div id="sidemenu_brandlogo">
+        <div onclick="showsidemenu()" id="sidemenu">
+          <span class="fas fa-bars"></span>
+        </div>
+        <div class="brandlogo">
+          <img class="logo" src="./logo.png" alt="" />
+        </div>
+      </div>
+      <div id="search_cart">
+        <div>
+          <input type="text" name="" id="searchonnav" placeholder="SEARCH" />
+        </div>
+        <h2>LOG IN</h2>
+        <h2>HELP</h2>
+        <div id="cartimage">
+          <img
+            src="https://static.vecteezy.com/system/resources/thumbnails/002/205/906/small/shopping-bag-icon-free-vector.jpg"
+            alt=""
+          />
+          <p id="cartcount">0</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="sidebar">
+      <div id="close_logo">
+        <div id="close_btn" onclick="closesidemenu()">+</div>
+        <div class="brandlogo">
+          <img class="logo" src="./logo.png" alt="" />
+        </div>
+      </div>
+      <div id="head_details">
+        <div id="headDetails">
+          <ul>
+            <li onclick="womensidebar()">WOMEN</li>
+            <li onclick="mensidebar()">MEN</li>
+            <li onclick="kidsidebar()">KIDS</li>
+          </ul>
+        </div>
+        <div id="sidemenudata">
+          <div id="sidemenudata-women">
+            <ul>
+              <li>NEW</li>
+              <li>BASICS</li>
+              <li>DRESSES | JUMPSUITS</li>
+              <li>SHIRTS</li>
+              <li>TROUSERS</li>
+              <li>TOPS | CORSETS</li>
+              <li>JEANS</li>
+              <li>T-SHIRTS</li>
+              <li>BODYSUITS</li>
+              <li>BLAZERS</li>
+              <li>JACKETS</li>
+              <li>KNITWEAR</li>
+              <li>SKIRTS</li>
+              <li>SHORTS | SKORTS</li>
+              <li>SUITS</li>
+              <li>CO-ORD SETS</li>
+              <li>SHOES</li>
+              <li>BAGS</li>
+              <li>SWIMWEAR</li>
+              <li>ACCESSORIES</li>
+              <li>PERFUMES</li>
+              <li>SALE</li>
+            </ul>
+          </div>
+          <div id="sidemenudata-men">
+            <ul>
+              <li>NEW</li>
+
+              <li>ZARA ATHLETICS</li>
+              <li>BASICS</li>
+              <li>SHIRTS</li>
+              <li>TROUSERS</li>
+              <li>TRENDS</li>
+              <li>JEANS</li>
+              <li>T-SHIRTS</li>
+              <li>POLO SHIRTS</li>
+              <li>BLAZERS</li>
+              <li>JACKETS</li>
+              <!-- <li>KNITWEAR</li> -->
+              <li>SKIRTS</li>
+              <li>SHORTS | SKORTS</li>
+              <li>SUITS</li>
+              <!-- <li>CO-ORD SETS</li> -->
+              <li>SHOES</li>
+              <!-- <li>BAGS</li> -->
+              <li>SWIMWEAR</li>
+              <li>ACCESSORIES</li>
+              <!-- <li>PERFUMES</li> -->
+              <li>SALE</li>
+            </ul>
+          </div>
+          <div id="sidemenudata-kid">
+            <ul>
+              <li>GIRL | 6-14 YEARS</li>
+              <li>BOY | 6-14 YEAR</li>
+              <li>BABY GIRL | 6 MONTHS-5 YEARS</li>
+              <li>BABY BOY | 6 MONTHS - 5 YEARS</li>
+              <li>ACCESSORIES</li>
+              <li>SALE</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <img
+        src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-man-new/subhome-xmedia-28-03//w/1366/IMAGE-landscape-fill-dfef3e6a-2e27-4ea7-b049-238695831147-default_0.jpg?ts=1657819076668"
+        alt=""
+      /><img
+        src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-man-new/subhome-xmedia-28-03//w/1366/IMAGE-landscape-fill-dfef3e6a-2e27-4ea7-b049-238695831147-default_0.jpg?ts=1657819076668"
+        alt=""
+      />
+    </div>
+  </body>
+</html>
+<script>
+  function showsidemenu() {
+    document.getElementById("sidebar").style.display = "grid";
+    document.getElementById("content").style.scroll = "";
+  }
+  function closesidemenu() {
+    document.getElementById("sidebar").style.display = "none";
+  }
+  function womensidebar() {
+    document.getElementById("sidemenudata-women").style.display = "flex";
+    document.getElementById("sidemenudata-men").style.display = "none";
+    document.getElementById("sidemenudata-kid").style.display = "none";
+  }
+  function mensidebar() {
+    document.getElementById("sidemenudata-men").style.display = "flex";
+    document.getElementById("sidemenudata-women").style.display = "none";
+    document.getElementById("sidemenudata-kid").style.display = "none";
+  }
+  function kidsidebar() {
+    document.getElementById("sidemenudata-kid").style.display = "flex";
+    document.getElementById("sidemenudata-women").style.display = "none";
+    document.getElementById("sidemenudata-men").style.display = "none";
+  }
+</script>
