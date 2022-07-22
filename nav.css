@@ -1,0 +1,219 @@
+#navbar {
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+  }
+
+  #sidemenu_brandlogo {
+    width: 30%;
+    height: 100%;
+
+    margin-left: 20px;
+    display: flex;
+  }
+  #sidemenu {
+    height: 100%;
+    width: 30px;
+  }
+  #sidemenu span {
+    font-size: 25px;
+    cursor: pointer;
+  }
+  #search_cart {
+    height: 20%;
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    margin-right: 20px;
+  }
+  #search_cart h2 {
+    font-size: 14px;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 30px;
+    cursor: pointer;
+  }
+  #cartimage {
+    height: 190%;
+
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  #cartimage img {
+    height: 100%;
+    cursor: pointer;
+  }
+  #cartimage p {
+    position: absolute;
+    padding-top: 10px;
+  }
+  #searchonnav {
+    width: 60%;
+    font-size: 12px;
+    height: 100%;
+    border: none;
+    border-bottom: 1px solid;
+    margin-right: 30%;
+    font-weight: bold;
+    padding-bottom: 5px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .brandlogo {
+    /* border: 1px solid; */
+    cursor: pointer;
+    width: 30px;
+  }
+  #brandlogo img {
+    width: 100%;
+    height: 80px;
+    margin-left: 40px;
+    border: 1px solid;
+  }
+  .logo {
+    width: 200px;
+    margin-left: 30px;
+  }
+  #sidebar {
+    width: 30%;
+    height: 100vh;
+    border: 1px solid;
+    display: none;
+    background-color: white;
+    position: absolute;
+    position: fixed;
+    padding-top: 15px;
+    z-index: 2;
+  }
+  #close_logo {
+    width: 100%;
+    height: 100px;
+    /* border: 1px solid; */
+    display: flex;
+  }
+  #head_details {
+    width: 100%;
+    height: 100vh;
+    /* border: 1px solid; */
+  }
+  #close_btn {
+    font-size: 50px;
+    transform: rotate(45deg);
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  #headDetails ul {
+    display: flex;
+    list-style: none;
+    margin-left: 40px;
+    padding-top: 30px;
+  }
+  #headDetails ul li {
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  #sidemenudata {
+    width: 100%;
+    height: 100vh;
+    /* border: 5px solid; */
+    background-color: transparent;
+  }
+  #sidemenudata-women {
+    width: 100%;
+    height: 400px;
+    background-color: transparent;
+    display: none;
+    color: black;
+
+    margin-top: 50px;
+  }
+
+  #sidemenudata-women ul {
+    width: 100%;
+    font-size: 13px;
+    list-style: none;
+    margin-left: 60px;
+    overflow: scroll;
+
+    padding: 10px 0px;
+  }
+  #sidemenudata-women ul li {
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  #sidemenudata-women ul li:last-child {
+    padding: 10px;
+    background-color: yellow;
+  }
+  #sidemenudata-men ul li:last-child {
+    padding: 10px;
+    background-color: yellow;
+  }
+  #sidemenudata-kid ul li:last-child {
+    padding: 10px;
+    background-color: yellow;
+  }
+  #sidemenudata-men {
+    width: 100%;
+    height: 400px;
+    background-color: transparent;
+    display: none;
+    color: black;
+    margin-top: 50px;
+  }
+  #sidemenudata-men ul {
+    width: 100%;
+    font-size: 13px;
+    list-style: none;
+    margin-left: 60px;
+    overflow: scroll;
+    
+    padding: 10px 0px;
+  }
+  
+  #sidemenudata-men ul li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  #sidemenudata-kid {
+    width: 100%;
+    height: 400px;
+    background-color: transparent;
+    display: none;
+    color: black;
+    margin-top: 50px;
+  }
+  #sidemenudata-kid ul {
+    width: 100%;
+    font-size: 13px;
+    list-style: none;
+    margin-left: 60px;
+    overflow: scroll;
+
+    padding: 10px 0px;
+  }
+  #sidemenudata-kid ul li {
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  #sidemenudata a{
+    text-decoration: none;
+    color: black;
+  }
+  #navbar a{
+    text-decoration: none;
+    color: black; 
+  }
+  #userNameshow{
+    text-transform: uppercase;
+  }

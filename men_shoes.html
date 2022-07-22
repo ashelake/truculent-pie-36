@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Men</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="nav.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      #women_jacket_container {
+        width: 100%;
+        height: auto;
+        display: grid;
+        justify-content: center;
+      }
+      #women_con {
+        margin-top: 150px;
+        width: 400px;
+        height: 600px;
+        /* border: 1px solid; */
+        display: flex;
+        overflow-x: scroll;
+        /* overflow: hidden; */
+      }
+      /* #women_con::-webkit-scrollbar {
+        width: 0;
+      } */
+      #women_con img {
+        width: 100%;
+      }
+      #title_price {
+        width: 400px;
+        font-size: 13px;
+        padding: 5px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--..................... Whole Navbar & Sidebar .........................-->
+    <!--........................ navbar start ......................-->
+    <div id="div_header"></div>
+    <!--.............................. sidebar End ..............................-->
+    <!--..................... Whole Navbar & Sidebar End.........................-->
+
+    <div id="women_jacket_container">
+      <!-- <div id="title_price"></div> -->
+    </div>
+  </body>
+</html>
+<script type="module">
+  import nav from "./navbar.js";
+
+  document.getElementById("div_header").innerHTML = nav();
+  let showusername = JSON.parse(localStorage.getItem("userName"));
+  console.log(showusername);
+  if(showusername!=null){
+    document.getElementById("userNameshow").innerText = showusername;
+  }
+</script>
+<script>
+  let url =
+    "https://zara-server.herokuapp.com/products?section=mensShoes";
+
+  fetch(url)
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (res) {
+      console.log(res);
+      append(res);
+    });
+
+  function append(res) {
+    let container = document.getElementById("women_jacket_container");
+    res.forEach((el) => {
+      let div = document.createElement("div");
+      div.id = "women_con";
+      div.addEventListener("click", function () {
+        window.location.href = "index.html";
+      });
+      let div2 = document.createElement("div");
+      div2.id = "title_price";
+
+      let image = document.createElement("img");
+      image.src = el.imgUrl;
+      let image1 = document.createElement("img");
+      image1.src = el.img2;
+
+      let title = document.createElement("p");
+
+      title.innerText = el.prod_name;
+      let price = document.createElement("p");
+
+      price.innerText = `₹ ${el.price}`;
+
+      div.append(image, image1);
+      container.append(div);
+
+      div2.append(title, price);
+      container.append(div2);
+    });
+  }
+  function showsidemenu() {
+    document.getElementById("sidebar").style.display = "grid";
+    document.getElementById("content").style.scroll = "";
+  }
+  function closesidemenu() {
+    document.getElementById("sidebar").style.display = "none";
+  }
+  function womensidebar() {
+    document.getElementById("sidemenudata-women").style.display = "flex";
+    document.getElementById("sidemenudata-men").style.display = "none";
+    document.getElementById("sidemenudata-kid").style.display = "none";
+  }
+  function mensidebar() {
+    document.getElementById("sidemenudata-men").style.display = "flex";
+    document.getElementById("sidemenudata-women").style.display = "none";
+    document.getElementById("sidemenudata-kid").style.display = "none";
+  }
+  function kidsidebar() {
+    document.getElementById("sidemenudata-kid").style.display = "flex";
+    document.getElementById("sidemenudata-women").style.display = "none";
+    document.getElementById("sidemenudata-men").style.display = "none";
+  }
+  
+</script>
