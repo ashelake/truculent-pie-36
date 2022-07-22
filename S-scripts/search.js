@@ -1,4 +1,6 @@
 import S_sort from "./sort.js";
+let x = document.getElementById("S-sort");
+// console.log(x);
 
 document.getElementById("jacket").addEventListener("click", WJ);
 document.getElementById("shoes").addEventListener("click", shoes);
@@ -12,7 +14,7 @@ function WJ() {
   let filter_btn = document.createElement("button");
   filter_btn.innerText = "FILTERS";
   document.getElementById("filter_button").append(filter_btn);
-  document.getElementById("S-sort").innerHTML = S_sort();
+  x.innerHTML = S_sort();
 }
 function shoes() {
   document.getElementById("s-trends").innerHTML = null;
@@ -21,7 +23,7 @@ function shoes() {
   let filter_btn = document.createElement("button");
   filter_btn.innerText = "FILTERS";
   document.getElementById("filter_button").append(filter_btn);
-  document.getElementById("S-sort").innerHTML = S_sort();
+  x.innerHTML = S_sort();
 }
 function WA() {
   document.getElementById("s-trends").innerHTML = null;
@@ -30,7 +32,7 @@ function WA() {
   let filter_btn = document.createElement("button");
   filter_btn.innerText = "FILTERS";
   document.getElementById("filter_button").append(filter_btn);
-  document.getElementById("S-sort").innerHTML = S_sort();
+  x.innerHTML = S_sort();
 }
 function SM() {
   document.getElementById("s-trends").innerHTML = null;
@@ -39,17 +41,17 @@ function SM() {
   let filter_btn = document.createElement("button");
   filter_btn.innerText = "FILTERS";
   document.getElementById("filter_button").append(filter_btn);
-  document.getElementById("S-sort").innerHTML = S_sort();
+  x.innerHTML = S_sort();
 }
-
 async function S_getData(query) {
   const url = `https://zara-server.herokuapp.com/products?section=${query}`;
   let res = await fetch(url);
   let data = await res.json();
-  console.log(data);
+  // console.log(data);
   S_append(data);
+  showProducts(data)
 }
-// S_getData("")
+// S_getData("mensShoes");
 
 function S_append(data) {
   let container = document.getElementById("s-append");
@@ -117,9 +119,17 @@ function searchIt(event) {
     document.getElementById("S-search").value = null;
   }
 }
+// console.log(x)
+x.addEventListener("change", showProducts);
 
-document.getElementById("S-sorting").addEventListener("change", sortProducts);
-function sortProducts() {
-  let value = document.getElementById("S-sorting").value;
-  console.log(value);
+function showProducts(data) {
+  // console.log("IN");
+  let selected = document.getElementById("S-sorting").value;
+  // console.log(selected);
+  if (selected == "HtoL") {
+    data.sort(function (a, b) {
+      return a.price - b.price;
+    });
+  }
+  console.log(data);
 }
