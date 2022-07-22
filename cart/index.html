@@ -7,66 +7,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart page</title>
     <link rel="stylesheet" href="./cart.css">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200;300;400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200;300;400&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet"> -->
-    <style>
-        #cartbar {
-            border: 1px solid black;
-            display: flex;
-            gap: 10px;
-            padding: 5px;
-        }
 
-        #cartbar>div {
-            border: 1px slateblue solid;
-            width: 10%;
-        }
-
-        #results {
-            border: 1px solid black;
-            margin-top: 10px;
-            width: 100%;
-            height: 350px;
-        }
-    </style>
 </head>
 
 <body>
     <nav>
         <div id="logo">
-          <a href="./index.html"><img
-            src="https://logodownload.org/wp-content/uploads/2014/05/zara-logo-1.png"
-            alt="zaralogo"
-          /></a>
-          
+            <a href="./index.html"><img src="https://logodownload.org/wp-content/uploads/2014/05/zara-logo-1.png"alt="zaralogo" /></a>
+
         </div>
         <div id="help">
-          <!-- <a href="./login.html"> <div>LOGIN</div></a> -->
-         <a href="./zarahelp.html"><div>HELP</div></a>
-          
+            <a href="./login.html">
+                <div>LOG IN</div>
+            </a>
+            <a href="../help/index.html">
+                <div>HELP</div>
+            </a>
+
         </div>
-      </nav>
-  
-      <!-- <div id="items">
-          <p>YOUR BASKET IS EMPTY</p>
-      </div> -->
-  
-      <div id="bag">
-        <h3>SHOPPING BAG</h3>
+    </nav>
+
+    <!-- <div id="items">
+        <p>YOUR BASKET IS EMPTY</p>
+    </div> -->
+
+    <div id="bag">
+        <h1>cart</h1>
         <p><span id="cartLen"> </span> ITEM</p>
-      </div>
-      <div id="items"></div>
-  
-      <div id="card">
+    </div>
+    <div id="items"></div>
+
+    <div id="card">
         <div>
-          <div id="price">TOTAL : <span id="total">0</span></div>
-          <button onclick="proceed()">
-            CONTINUE
-          </button>
+            <div id="price">TOTAL : <span id="total">0</span></div>
+            <button onclick="proceed()">
+                CONTINUE
+            </button>
         </div>
-      </div>
-  
-      <div id="footer"></div>
+    </div>
+
+    <div id="footer"></div>
 
 </body>
 
