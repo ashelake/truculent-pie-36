@@ -37,8 +37,11 @@ p[1].innerText = mybag.description;
 p[2].innerText = `₹${mybag.price}`;
 p[3].innerText = "MRP incl. of all taxes";
 
+let mycart=JSON.parse(localStorage.getItem("S_cart")) || [];
 document.querySelector("#S_right>button").addEventListener("click", () => {
-  localStorage.setItem("S_cart", JSON.stringify(mybag));
+  mycart.push(mybag);
+  localStorage.setItem("S_cart", JSON.stringify(mycart));
+  // console.log(mycart)
 });
 
 document.getElementById("S_middle").addEventListener("mouseover", function () {
@@ -58,4 +61,8 @@ document.getElementById("S_middle").addEventListener("mouseover", function () {
 
 document.getElementById("S_middle").addEventListener("mouseout", function () {
   document.getElementById("hover_div").innerHTML = null;
+});
+
+document.querySelector("#S_middle>img").addEventListener("click", () => {
+  window.location.href = document.querySelector("#S_middle>img").src;
 });
