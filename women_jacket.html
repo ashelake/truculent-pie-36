@@ -94,16 +94,7 @@
     </div>
   </body>
 </html>
-<script type="module">
-  import nav from "./navbar.js";
-
-  document.getElementById("div_header").innerHTML = nav();
-  let showusername = JSON.parse(localStorage.getItem("userName"));
-  console.log(showusername);
-  if (showusername != null) {
-    document.getElementById("userNameshow").innerText = showusername;
-  }
-</script>
+<script src="nav_script.js" type="module"></script>
 <!-- <script>
   function displayfilter() {
     document.getElementById("filter_data").style.display = "grid";
@@ -176,5 +167,4 @@
     document.getElementById("sidemenudata-women").style.display = "none";
     document.getElementById("sidemenudata-men").style.display = "none";
   }
-  
 </script>

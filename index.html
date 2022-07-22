@@ -226,16 +226,7 @@
     <!--image slider end-->
   </body>
 </html>
-<script type="module">
-  import nav from "./navbar.js";
-
-  document.getElementById("div_header").innerHTML = nav();
-  let showusername = JSON.parse(localStorage.getItem("userName"));
-  console.log(showusername);
-  if (showusername != null) {
-    document.getElementById("userNameshow").innerText = showusername;
-  }
-</script>
+<script src="nav_script.js" type="module"></script>
 <script>
   function showsidemenu() {
     document.getElementById("sidebar").style.display = "grid";
@@ -260,5 +251,4 @@
     document.getElementById("sidemenudata-men").style.display = "none";
   }
 
- 
 </script>
