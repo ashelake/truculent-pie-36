@@ -1,5 +1,5 @@
 
-let data = JSON.parse(localStorage.getItem("cart")) || [];
+let data = JSON.parse(localStorage.getItem("S_cart")) || [];
 
 let cart_total = 0;
 display_product(data);
@@ -83,7 +83,7 @@ function display_product(data) {
 
 function removeElem(index) {
   data.splice(index, 1);
-  localStorage.setItem("cart", JSON.stringify(data));
+  localStorage.setItem("S_cart", JSON.stringify(data));
   display_product(data);
 }
 

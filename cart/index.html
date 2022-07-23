@@ -1,48 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart page</title>
-    <link rel="stylesheet" href="./cart.css" />
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200;300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./cart.css">
+
+</head>
+
+<link rel="stylesheet" href="./cart.css" />
+<!-- <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200;300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200;300;400&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet"> -->
-    <style>
-      #cartbar {
+<style>
+    #cartbar {
         border: 1px solid black;
         display: flex;
         gap: 10px;
         padding: 5px;
-      }
+    }
 
-      #cartbar > div {
+    #cartbar>div {
         border: 1px slateblue solid;
         width: 10%;
-      }
+    }
 
-      #results {
+    #results {
         border: 1px solid black;
         margin-top: 10px;
         width: 100%;
         height: 350px;
-      }
-    </style>
-  </head>
+    }
+</style>
+</head>
 
-  <body>
+
+<body>
     <nav>
-      <div id="logo">
-        <a href="../index.html"
-          ><img
-            src="https://logodownload.org/wp-content/uploads/2014/05/zara-logo-1.png"
-            alt="zaralogo"
-        /></a>
-      </div>
-      <div id="help">
-        <!-- <a href="./login.html"> <div>LOGIN</div></a> -->
-        <a href="./zarahelp.html"><div>HELP</div></a>
-      </div>
+        <div id="logo">
+            <a href="../index.html"><img src="https://logodownload.org/wp-content/uploads/2014/05/zara-logo-1.png"
+                    alt="zaralogo" /></a>
+        </div>
+        <div id="help">
+            <!-- <a href="./login.html"> <div>LOGIN</div></a> -->
+            <a href="./zarahelp.html">
+                <div>HELP</div>
+            </a>
+        </div>
     </nav>
 
     <!-- <div id="items">
@@ -50,19 +56,23 @@
       </div> -->
 
     <div id="bag">
-      <h3>SHOPPING BAG</h3>
-      <p><span id="cartLen"> </span> ITEM</p>
+        <h3>SHOPPING BAG</h3>
+        <p><span id="cartLen"> </span> ITEM</p>
     </div>
     <div id="items"></div>
 
     <div id="card">
-      <div>
-        <div id="price">TOTAL : <span id="total">0</span></div>
-        <button onclick="proceed()">CONTINUE</button>
-      </div>
+        <div>
+            <div id="price">TOTAL : <span id="total">0</span></div>
+            <button onclick="proceed()">CONTINUE</button>
+        </div>
     </div>
 
     <div id="footer"></div>
-  </body>
+</body>
+
 </html>
+<script type="module">
+
+</script>
 <script src="./cart.js"></script>
