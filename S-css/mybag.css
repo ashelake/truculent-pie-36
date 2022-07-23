@@ -1,6 +1,4 @@
-*{
-    font-family: 'Courier New', Courier, monospace;
-}
+
 
 #S_main{
     margin: auto;
@@ -55,7 +53,7 @@ position: relative;
 #S_middle>img{
     width: 100%;
     height: 600px;
-    
+    cursor: pointer;
 }
 #S_middle>button{
     position: absolute;
@@ -77,6 +75,7 @@ position: relative;
 }
 #S_right{
     margin-top: 50px;
+    font-family: 'Courier New', Courier, monospace;
 /* border: 1px solid blue; */
 width: 15%;
 /* height: 500px; */
@@ -128,4 +127,48 @@ letter-spacing: .8px;
 width: 100%;
 height: 100px;
 margin-top: 5px;
+}
+#S_like{
+    width: 80%;
+    /* border: 1px solid red; */
+    display: flex;
+    gap: 10px;
+}
+#like1>img{
+    width: 100%;
+}
+#like2>img{
+    width: 100%;
+}
+#like3>img{
+    width: 100%;
+}
+
+.name{
+    font-size: 14px;
+    color: rgb(105, 103, 103);
+    line-height: 16px;
+    letter-spacing: .4px;
+}
+
+.price{
+font-size: 14px;
+color: rgb(105, 103, 103);
+line-height: 16px;
+letter-spacing: .8px;
+}
+
+.tx{
+    font-size: 12px;
+    color: rgb(195, 186, 186);
+    line-height: 16px;
+    letter-spacing: .4px; 
+}
+#S_like button{
+    padding: 7px;
+    width: 40%;
+    background-color:white;
+    line-height: 16px;
+    letter-spacing: .7px;
+    cursor: pointer;
 }
