@@ -1631,7 +1631,9 @@ var totalWomanProducts = [
     color: "yellow",
   },
 ];
-
+import nav from "../navbar.js"
+// console.log(nav())
+document.getElementById("div_header").innerHTML = nav();
 import { S_sort } from "./sort.js";
 // console.log(S_sort)
 
@@ -1700,69 +1702,65 @@ function S_append(data) {
   });
 }
 
-x.addEventListener("change", function(){
-    let data = JSON.parse(localStorage.getItem("products"));
-    let selected = document.getElementById("S-sorting").value;
-      // console.log(selected);
-      if(selected=="HtoL"){
-        data.sort((a,b)=>{
-          return b.price-a.price;
-        })
-        S_append(data);
-      }
-      if(selected=="LtoH"){
-        data.sort((a,b)=>{
-          return a.price-b.price;
-        })
-        S_append(data);
-      }
-  });
-
-
-
-  document.getElementById("S-search").addEventListener("keypress", searchIt);
-
-
-
-  function searchIt(event) {
-    if (event.key == "Enter") {
-      event.preventDefault();
-      let searched = document.getElementById("S-search").value;
-      if (
-        searched == "blazer" ||
-        searched == "BLAZER" ||
-        searched == "women blazer"
-      ) {
-        localStorage.setItem("products", JSON.stringify(blazers));
-        // document.getElementById("s-append").innerHTML = null;
-        document.getElementById("s-trends").innerHTML = null;
-        document.getElementById("filter_button").innerHTML = null;
-        let filter_btn = document.createElement("button");
-        filter_btn.innerText = "FILTERS";
-        document.getElementById("filter_button").append(filter_btn);
-        S_append(blazers);
-        x.innerHTML = S_sort();
-      } else if (searched == "top" || searched == "tops") {
-        // document.getElementById("s-append").innerHTML = null;
-        localStorage.setItem("products", JSON.stringify(tops));
-        document.getElementById("s-trends").innerHTML = null;
-        document.getElementById("filter_button").innerHTML = null;
-        let filter_btn = document.createElement("button");
-        filter_btn.innerText = "FILTERS";
-        document.getElementById("filter_button").append(filter_btn);
-        S_append(tops);
-        x.innerHTML = S_sort();
-      } else if (searched == "jeans" || searched == "women jeans") {
-        // document.getElementById("s-append").innerHTML = null;
-        localStorage.setItem("products", JSON.stringify(jeans));
-        document.getElementById("s-trends").innerHTML = null;
-        document.getElementById("filter_button").innerHTML = null;
-        let filter_btn = document.createElement("button");
-        filter_btn.innerText = "FILTERS";
-        document.getElementById("filter_button").append(filter_btn);
-        S_append(jeans);
-        x.innerHTML = S_sort();
-      } 
-      document.getElementById("S-search").value = null;
-    }
+x.addEventListener("change", function () {
+  let data = JSON.parse(localStorage.getItem("products"));
+  let selected = document.getElementById("S-sorting").value;
+  // console.log(selected);
+  if (selected == "HtoL") {
+    data.sort((a, b) => {
+      return b.price - a.price;
+    });
+    S_append(data);
   }
+  if (selected == "LtoH") {
+    data.sort((a, b) => {
+      return a.price - b.price;
+    });
+    S_append(data);
+  }
+});
+
+document.getElementById("S-search").addEventListener("keypress", searchIt);
+
+function searchIt(event) {
+  if (event.key == "Enter") {
+    event.preventDefault();
+    let searched = document.getElementById("S-search").value;
+    if (
+      searched == "blazer" ||
+      searched == "BLAZER" ||
+      searched == "women blazer"
+    ) {
+      localStorage.setItem("products", JSON.stringify(blazers));
+      // document.getElementById("s-append").innerHTML = null;
+      document.getElementById("s-trends").innerHTML = null;
+      document.getElementById("filter_button").innerHTML = null;
+      let filter_btn = document.createElement("button");
+      filter_btn.innerText = "FILTERS";
+      document.getElementById("filter_button").append(filter_btn);
+      S_append(blazers);
+      x.innerHTML = S_sort();
+    } else if (searched == "top" || searched == "tops") {
+      // document.getElementById("s-append").innerHTML = null;
+      localStorage.setItem("products", JSON.stringify(tops));
+      document.getElementById("s-trends").innerHTML = null;
+      document.getElementById("filter_button").innerHTML = null;
+      let filter_btn = document.createElement("button");
+      filter_btn.innerText = "FILTERS";
+      document.getElementById("filter_button").append(filter_btn);
+      S_append(tops);
+      x.innerHTML = S_sort();
+    } else if (searched == "jeans" || searched == "women jeans") {
+      // document.getElementById("s-append").innerHTML = null;
+      localStorage.setItem("products", JSON.stringify(jeans));
+      document.getElementById("s-trends").innerHTML = null;
+      document.getElementById("filter_button").innerHTML = null;
+      let filter_btn = document.createElement("button");
+      filter_btn.innerText = "FILTERS";
+      document.getElementById("filter_button").append(filter_btn);
+      S_append(jeans);
+      x.innerHTML = S_sort();
+    }
+    document.getElementById("S-search").value = null;
+  }
+}

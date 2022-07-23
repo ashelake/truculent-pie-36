@@ -1,6 +1,4 @@
-*{
-    font-family: 'Courier New', Courier, monospace;
-}
+
 
 #S_main{
     margin: auto;
@@ -77,6 +75,7 @@ position: relative;
 }
 #S_right{
     margin-top: 50px;
+    font-family: 'Courier New', Courier, monospace;
 /* border: 1px solid blue; */
 width: 15%;
 /* height: 500px; */
