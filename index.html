@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>ZARA</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="nav.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .slider {
+        width: 100%;
+        height: auto;
+        /* border-radius: 10px; */
+        overflow-x: hidden;
+        /* overflow: hidden; */
+
+        /* border: 1px solid; */
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
+        z-index: -2;
+        height: 100vh;
+      }
+
+      .slides {
+        width: 500%;
+        height: 100vh;
+        display: flex;
+      }
+
+      .slides input {
+        display: none;
+      }
+
+      .slide {
+        width: 20%;
+        transition: 2s;
+      }
+
+      .slide img {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      /*css for manual slide navigation*/
+
+      .navigation-manual {
+        position: absolute;
+        width: 1200px;
+        margin-top: -40px;
+        display: flex;
+        justify-content: center;
+        bottom: 20px;
+      }
+
+      .manual-btn {
+        /* border: 2px solid #40d3dc; */
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 1s;
+      }
+
+      .manual-btn:not(:last-child) {
+        margin-right: 40px;
+      }
+
+      .manual-btn:hover {
+        background: #40d3dc;
+      }
+
+      #radio1:checked ~ .first {
+        margin-left: 0;
+      }
+
+      #radio2:checked ~ .first {
+        margin-left: -20%;
+      }
+
+      #radio3:checked ~ .first {
+        margin-left: -40%;
+      }
+
+      #content img {
+        width: 100vw;
+      }
+      #content {
+        text-decoration: none;
+        /* scroll-snap-type: y mandatory;
+        overflow-y: scroll;
+        z-index: -2;
+        height: 100vh; */
+      }
+      section {
+        width: 100%;
+        height: 100vh;
+        /* border: 1px solid; */
+        scroll-snap-align: end;
+        overflow: hidden;
+      }
+      .videoback {
+        transform: scale(1.5);
+        width: 100vw;
+      }
+      * {
+        margin: 0;
+        padding: 0%;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      #womenpage_image_div {
+        height: 100vh;
+        display: flex;
+        /* border: 1px solid; */
+        justify-content: center;
+        align-items: center;
+      }
+      #womenpage_image {
+        height: 450px;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ..................... Whole Navbar & Sidebar .........................-->
+    <!--........................ navbar start ......................-->
+    <div id="div_header"></div>
+    <!--.............................. sidebar End ..............................-->
+    <!--..................... Whole Navbar & Sidebar End......................... -->
+
+    <!-- image slider start -->
+    <div class="slider">
+      <div class="slides">
+        <!--radio buttons start-->
+        <input type="radio" name="radio-btn" id="radio1" />
+        <input type="radio" name="radio-btn" id="radio2" />
+        <input type="radio" name="radio-btn" id="radio3" />
+        <input type="radio" name="radio-btn" id="radio4" />
+        <!--radio buttons end-->
+        <!--slide images start-->
+        <!--..................... women start...................... -->
+        <div class="slide first">
+          <section>
+            <video autoplay loop muted plays-inline class="videoback">
+              <source src="./Zara _ Behind your click.mp4" />
+              type="" />
+            </video>
+          </section>
+          <section>
+            <div id="womenpage_image_div">
+              <img
+                id="womenpage_image"
+                src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-new-collection/subhome-xmedia-29-3//w/666/IMAGE-landscape-deea6db7-fa11-4e92-8c76-4f5940d05dbb-default_0.jpg?ts=1658336070768"
+                alt=""
+              />
+            </div>
+          </section>
+          <section>
+            <img
+              src="https://static.zara.net/photos///2022/I/0/1/p/4548/211/303/12/w/1346/4548211303_9_2_1.jpg?ts=1658317794070"
+              alt=""
+            />
+          </section>
+        </div>
+        <!--..................... women End...................... -->
+
+        <!--.......................... men ........................... -->
+        <div class="slide">
+          <section>
+            <video autoplay loop muted plays-inline class="videoback">
+              <source src="./Zara Man Campaign _ Spring Summer 2018.mp4" />
+              type="" />
+            </video>
+          </section>
+          <section>
+            <img
+              src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-man-join-life/subhome-xmedia-28//w/1366/IMAGE-landscape-fill-2c250f47-8ed1-46ee-84b8-4a528eed7c43-default_0.jpg?ts=1657818038247"
+              alt=""
+            />
+          </section>
+          <section>
+            <img
+              src="https://static.zara.net/photos///contents/mkt/spots/ss22-sales/subhome-xmedia-launch-man//w/703/IMAGE-square-fill-a4d40e1f-3c1b-4d23-9a76-50c88356cc8b-ar_LB@QA_0.jpg?ts=1658241629320"
+              alt=""
+            />
+          </section>
+        </div>
+        <!--.......................... men End ........................... -->
+        <!--...................... Kid Start....................-->
+        <div class="slide">
+          <section>
+            <img
+              src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-kids-girl/subhome-xmedia-28-3//w/1366/IMAGE-portrait-ipad-fill-68617b25-535d-400d-8fb7-c84b8a5ef1f6-default_0.jpg?ts=1658223344119"
+              alt=""
+            />
+          </section>
+          <section>
+            <img
+              src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-kids-boy/subhome-xmedia-29//w/1366/IMAGE-portrait-ipad-fill-9971546c-55e8-4bc8-8f8c-ebb8f0ca1c37-default_0.jpg?ts=1658419682035"
+              alt=""
+            />
+          </section>
+          <section>
+            <img
+              src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-kids-mini/subhome-xmedia-28//w/1366/IMAGE-portrait-ipad-fill-c70752d1-2030-4ae6-95db-333165e109b3-default_0.jpg?ts=1657733570101"
+              alt=""
+            />
+          </section>
+        </div>
+        <!--...................... Kid End....................-->
+      </div>
+      <!--manual navigation start-->
+      <div class="navigation-manual">
+        <label for="radio1" class="manual-btn">WOMEN</label>
+        <label for="radio2" class="manual-btn">MEN</label>
+        <label for="radio3" class="manual-btn">KIDS</label>
+        <!-- <label for="radio4" class="manual-btn"></label> -->
+      </div>
+      <!--manual navigation end-->
+    </div>
+    <!--image slider end-->
+  </body>
+</html>
+<script src="nav_script.js" type="module"></script>
+<script>
+  function showsidemenu() {
+    document.getElementById("sidebar").style.display = "grid";
+    document.getElementById("content").style.scroll = "";
+  }
+  function closesidemenu() {
+    document.getElementById("sidebar").style.display = "none";
+  }
+  function womensidebar() {
+    document.getElementById("sidemenudata-women").style.display = "flex";
+    document.getElementById("sidemenudata-men").style.display = "none";
+    document.getElementById("sidemenudata-kid").style.display = "none";
+  }
+  function mensidebar() {
+    document.getElementById("sidemenudata-men").style.display = "flex";
+    document.getElementById("sidemenudata-women").style.display = "none";
+    document.getElementById("sidemenudata-kid").style.display = "none";
+  }
+  function kidsidebar() {
+    document.getElementById("sidemenudata-kid").style.display = "flex";
+    document.getElementById("sidemenudata-women").style.display = "none";
+    document.getElementById("sidemenudata-men").style.display = "none";
+  }
+
+</script>
