@@ -55,7 +55,7 @@ position: relative;
 #S_middle>img{
     width: 100%;
     height: 600px;
-    
+    cursor: pointer;
 }
 #S_middle>button{
     position: absolute;
