@@ -1,3 +1,8 @@
+
+import nav from "../navbar.js"
+// console.log(nav())
+document.getElementById("div_header").innerHTML = nav();
+
 let mybag = JSON.parse(localStorage.getItem("myProducts"));
 // console.log(mybag);
 document.querySelector("title").innerText = mybag.name;
