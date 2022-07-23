@@ -24,9 +24,13 @@
   border: 1px solid #ffae48;
   color: #ffae48;
   width: 600px;
-  font-size: 11px;
+  font-size: 15px;
   padding: 20px 0px 20px 20px;
   margin-top: 20px;
+}
+
+#upir>p{
+  margin-top: 0px;
 }
 #bottom>h2{
   font-size: 22px;
@@ -131,6 +135,9 @@
   #bottom > p {
     font-size: 14;
   }
+  #CONTINUE>div>button{
+    width: 35%;
+  }
 }
 @media only screen and (min-width: 0px) and (max-width: 390px) {
   #boxes {
@@ -147,5 +154,8 @@
   button {
     width: 200px;
     height: 45px;
+  }
+  #CONTINUE>div>button{
+    width: 55%;
   }
 }
