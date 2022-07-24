@@ -87,6 +87,10 @@
 #CONTINUE{
   width: 80%;
   margin: auto;
+  margin-top: 50px;
+  position: sticky;
+  bottom: 10px;
+  background-color: white;
 }
 #CONTINUE>div{
   display: flex;
@@ -103,6 +107,9 @@
   margin-left: 20px;
   cursor: pointer;
 
+}
+#upir>p{
+  margin-top: -10px;
 }
 
 @media only screen and (min-width: 375px) and (max-width: 768px) {

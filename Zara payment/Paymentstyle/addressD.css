@@ -1,0 +1,89 @@
+#maina {
+    width: 80%;
+    margin: auto;
+    margin-top: 100px;
+    font-family: 'lato', sans-serif;
+}
+
+#select {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 0px 10px 10px 10px;
+}
+
+#select>div {
+    display: flex;
+
+}
+
+#select>div>div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+#bold {
+    height: 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#select>div>div>button {
+    padding: 5px;
+    border-radius: 50%;
+    background-color: black;
+    cursor: pointer;
+
+}
+
+#bold+p {
+    font-size: 14px;
+    font-weight: lighter;
+    color: gray;
+    height: 10px;
+}
+
+#bold+p+p,
+a {
+    font-size: 12px;
+    font-weight: lighter;
+    color: gray;
+    height: 3px;
+}
+
+#select>div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#CONTINUE {
+    width: 80%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+#CONTINUE>div {
+    display: flex;
+    justify-content: end;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#CONTINUE>div>button {
+    background-color: black;
+    color: white;
+    height: 40px;
+    width: 25%;
+    font-size: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+#bottom {
+    padding: 0px 0px 0px 30px;
+}

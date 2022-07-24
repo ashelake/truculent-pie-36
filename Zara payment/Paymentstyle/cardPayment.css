@@ -39,6 +39,10 @@ form > select {
 #CONTINUE {
   width: 80%;
   margin: auto;
+  margin-top: 50px;
+  position: sticky;
+  bottom: 0px;
+  background-color: white;
 }
 #CONTINUE > div {
   display: flex;
@@ -50,13 +54,14 @@ form > select {
   background-color: black;
   color: white;
   height: 40px;
-  width: 15%;
+  width: 35%;
   font-size: 20px;
   margin-left: 20px;
   cursor: pointer;
 }
 #bottom {
   padding: 0px 0px 0px 30px;
+  margin-top: 100px;
 }
 
 @media only screen and (min-width: 375px) and (max-width: 768px) {
