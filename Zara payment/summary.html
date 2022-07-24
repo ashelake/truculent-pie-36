@@ -2,112 +2,32 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Process Order - Summary</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Karla:wght@200;300&family=Mulish:wght@200;400&family=PT+Sans&family=Pacifico&family=Shizuru&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="../nav.css" />
-    <link rel="stylesheet" href="Paymentstyle/summary.css">
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 
 <body>
-    <!-- navbar -->
-
-    <div id="main">
-        <div id="left">
-            20,sutihara,
-            sitamarhi,
-            bihar,india
-        </div>
-
-        <div id="right"></div>
+    <div>
+        <h2>Enter OTP</h2>
+        <input type="text" id="otpx" placeholder="Enter 1234">
+        <button onclick="checkfun()">submt</button>
     </div>
-    <div id="footer">
-        <footer class="footer" id="footer">
-            <div class="container">
-                <div class="options">
-                    <div class="footer-opt">
-                        <h4>HELP</h4>
-                        <ul>
-                            <li><a href="*">SHOP AT ZARA.COM</a></li>
-                            <li><a href="*">PRODUCT</a></li>
-                            <li><a href="*">PAYMENT</a></li>
-                            <li><a href="*">SHIPPING</a></li>
-                            <li><a href="*">EXCHANGES AND RETURNS</a></li>
-                            <li><a href="*">SHOPS AND COMPANY</a></li>
-                            <li><a href="*">CLOTHES COLLECTION PROGRAMME</a></li>
-                            <li><a href="*">MY ACCOUNT</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-opt">
-                        <h4>FOLLOW US</h4>
-                        <ul>
-                            <li><a href="*">NEWSLETTER</a></li>
-                            <li><a href="*">TIKTOK</a></li>
-                            <li><a href="*">INSTAGRAM</a></li>
-                            <li><a href="*">FACEBOOK</a></li>
-                            <li><a href="*">TWITTER</a></li>
-                            <li><a href="*">PINTEREST</a></li>
-                            <li><a href="*">YOUTUBE</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-opt">
-                        <h4>COMPANY</h4>
-                        <ul>
-                            <li><a href="*">ABOUT US</a></li>
-                            <li><a href="*">OFFICES</a></li>
-                            <li><a href="*">STORES</a></li>
-                            <li><a href="*">WORK WITH US</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-opt">
-                        <h4>POLICIES</h4>
-                        <ul>
-                            <li><a href="*">PRIVACY POLICY</a></li>
-                            <li><a href="*">PURCHASE CONDITIONS</a></li>
-                            <li><a href="*">COOKIES SETTINGS</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <hr id="line">
-                <div class="divfoot">
-                    <div id="div1">
-                        <p>INDIA</p>
-                    </div>
-                    <div id="div2">
-                        <p>ENGLISH</p>
-                        <br />
-                        <p id="reserved">© ALL RIGHTS RESERVED</p>
-                    </div>
-                </div>
-                <p id="end">NAME AND ADDRESS OF THE MANUFACTURER:<br />INDUSTRIA DE DISEÑO TEXTIL, S.A. (INDITEX,
-                    S.A.)<br />AVENIDA DE LA DIPUTACIÓN, EDIFICIO INDITEX, 15143, ARTEIXO (A CORUÑA), SPAIN</p>
-        </footer>
-    </div>
-
-    <div id="CONTINUE">
-        <div id="check">
-            <input id="check" type="checkbox">
-            <span>I ACCEPT THE <u>TERMS OF PURCHASE</u> AND <u>PRIVACY POLICY</u></span>
-        </div>
-        <div id="pr">
-            <div id="price">TOTAL : <span>2,290.00</span></div>
-            <button id="done">CONTINUE</button>
-        </div>
-    </div>
-
-
 </body>
 
 </html>
+<script>
+    let pin = 1234;
 
-<script type="module">
-    let total = JSON.parse(localStorage.getItem("total"));
-    document.getElementById("price").innerHTML = `TOTAL : <span>${total}</span>`;
+    function checkfun() {
+        let otp = document.getElementById("otpx").value;
+        console.log(otp)
+        if (+(otp) == pin) {
+            alert("Payment successfull")
+            window.location.href = "../index.html"
+        } else {
+            alert("Wrong otp, Try Again")
+        }
+    }
 </script>
-
-<script src=""></script>
