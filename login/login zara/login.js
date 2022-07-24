@@ -8,8 +8,10 @@ document.querySelector("form").addEventListener("submit", function () {
     if (email == el.email && password == el.password) {
       localStorage.setItem("userData", JSON.stringify(el));
       localStorage.setItem("userName", JSON.stringify(el.name));
-      window.location.href = "../index.html";
+      
       alert("Logged In");
+      window.location.href = "../index.html"
+
     } else {
       alert("Enter Correct details");
     }
