@@ -1631,12 +1631,16 @@ var totalWomanProducts = [
     color: "yellow",
   },
 ];
-import nav from "../navbar.js"
+// import nav from "../navbar.js";
 // console.log(nav())
-document.getElementById("div_header").innerHTML = nav();
+// document.getElementById("div_header").innerHTML = nav();
 import { S_sort } from "./sort.js";
+// document.getElementById("S-sort").innerHTML=S_sort();
 // console.log(S_sort)
-
+import {footers} from "../login zara/components/footer.js"
+// console.log(footers);
+let footer_div = document.getElementById("footer");
+footer_div.innerHTML = footers();
 document.getElementById("DRESS").addEventListener("click", mydress);
 document.getElementById("TOP").addEventListener("click", mytop);
 document.getElementById("BLAZER").addEventListener("click", myblazer);
