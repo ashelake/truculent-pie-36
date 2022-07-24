@@ -44,7 +44,7 @@ a{
   margin-top: 10px;
 }
 #items{
-  border: 1px solid black;
+  /* border: 1px solid black; */
  
   margin-left: 100px;
   width: 100ev;
@@ -81,11 +81,7 @@ a{
 .desc p,h5{
   margin-bottom: 15px;
 }
-p{
-  text-align: center;
-  margin-top: 200px;
-  font-size: 10px;
-}
+
 #card>div{
   display: flex;
   margin-left: 69%;

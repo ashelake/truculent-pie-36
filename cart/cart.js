@@ -5,9 +5,9 @@ let cart_total = 0;
 display_product(data);
 
 function display_product(data) {
-  document.querySelector("#cartLen").innerText = data.reduce((sum, item) =>{
-      return sum + item.qty
-  },0);
+  document.querySelector("#cartLen").innerText = data.reduce((sum, item) => {
+    return sum + item.qty
+  }, 0);
 
   cart_total =
     "₹ " +
@@ -15,7 +15,7 @@ function display_product(data) {
       return ac + cv.price * cv.qty;
     }, 0);
 
-    localStorage.setItem("total",JSON.stringify(cart_total))
+  localStorage.setItem("total", JSON.stringify(cart_total))
 
   document.querySelector("#total").innerHTML = cart_total;
 
@@ -43,9 +43,9 @@ function display_product(data) {
       removeElem(index);
     });
 
-    img.src = elem.imgUrl;
-    name.innerHTML = elem.prod_name;
-    price.innerHTML = "₹" + elem.strikedOffPrice;
+    img.src = elem.image_url;
+    name.innerHTML = elem.name;
+    price.innerHTML = "₹" + elem.price;
     price2.innerHTML = "₹" + elem.price;
     del.innerHTML = `<i class="far fa-trash-alt"></i>`;
     del.style.marginTop = "20px";
@@ -100,23 +100,23 @@ function decCount(index) {
 }
 
 
-function proceed(){
+function proceed() {
 
   console.log("here")
 
   let token = JSON.parse(localStorage.getItem("token"));
 
-  if(token && data.length){
+  if (token && data.length) {
     window.location.href = "./shipping.html";
     return
   }
 
-  if(token){
+  if (token) {
     alert("Your cart is empty Please add some items")
     window.location.href = "./index.html";
     return
   }
 
-  window.location.href = "./login.html";
+  window.location.href = "../Zara payment/addressDate.html";
 
 }
