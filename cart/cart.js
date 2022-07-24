@@ -8,11 +8,15 @@ function display_product(data) {
   document.querySelector("#cartLen").innerText = data.reduce((sum, item) => {
     return sum + item.qty
   }, 0);
-
+  
   cart_total =
     "₹ " +
     data.reduce(function (ac, cv) {
-      return ac + cv.price * cv.qty;
+      let t = 0
+        t = +(t) + (+cv.price)
+   
+      return t;
+
     }, 0);
 
   localStorage.setItem("total", JSON.stringify(cart_total))
@@ -52,32 +56,33 @@ function display_product(data) {
     del.style.cursor = "pointer";
 
     // quantity div
-    let quantityMain = document.createElement("div");
-    let dec = document.createElement("button");
-    if (elem.qty > 1) {
-      dec.style.cursor = "pointer";
-    }
-    dec.addEventListener("click", function () {
-      decCount(index);
-    });
-    let quantity = document.createElement("span");
-    let inc = document.createElement("button");
-    inc.style.cursor = "pointer";
+    // let quantityMain = document.createElement("div");
+    // let dec = document.createElement("button");
+    // if (elem.qty > 1) {
+    //   dec.style.cursor = "pointer";
+    // }
+    // dec.addEventListener("click", function () {
+    //   decCount(index);
+    // });
+    // let quantity = document.createElement("span");
+    // let inc = document.createElement("button");
+    // inc.style.cursor = "pointer";
 
-    inc.addEventListener("click", function () {
-      incCount(index);
-    });
+    // inc.addEventListener("click", function () {
+    //   incCount(index);
+    // });
 
-    dec.innerText = "-";
-    inc.innerText = " + ";
-    quantity.innerHTML = elem.qty;
-    quantity.style.margin = "0px 10px 0px 10px";
+    // dec.innerText = "-";
+    // inc.innerText = " + ";
+    // quantity.innerHTML = elem.qty;
+    // quantity.style.margin = "0px 10px 0px 10px";
 
     // appending the child elements with the parent elements
-    quantityMain.append(dec, quantity, inc);
-    details.append(name, price, price2, quantityMain, del);
+    // quantityMain.append(dec, quantity, inc);
+    details.append(name, price, price2, del);
     mainDiv.append(img, details);
     document.querySelector("#items").append(mainDiv);
+    localStorage.setItem("token",JSON.stringify(data))
   });
 }
 
@@ -87,27 +92,27 @@ function removeElem(index) {
   display_product(data);
 }
 
-function incCount(index) {
-  data[index].qty++;
-  display_product(data);
-}
+// function incCount(index) {
+//   data[index].qty++;
+//   display_product(data);
+// }
 
-function decCount(index) {
-  if (data[index].qty > 1) {
-    data[index].qty--;
-    display_product(data);
-  }
-}
+// function decCount(index) {
+//   if (data[index].qty > 1) {
+//     data[index].qty--;
+//     display_product(data);
+//   }
+// }
 
 
 function proceed() {
 
   console.log("here")
 
-  let token = JSON.parse(localStorage.getItem("token"));
+  let token = JSON.parse(localStorage.getItem("token")) || [];
 
   if (token && data.length) {
-    window.location.href = "./shipping.html";
+    window.location.href = "../Zara payment/addressDate.html";
     return
   }
 
