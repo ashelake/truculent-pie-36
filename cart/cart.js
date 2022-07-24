@@ -112,7 +112,7 @@ function proceed() {
   let token = JSON.parse(localStorage.getItem("token")) || [];
 
   if (token && data.length) {
-    window.location.href = "./shipping.html";
+    window.location.href = "../Zara payment/addressDate.html";
     return
   }
 
