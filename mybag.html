@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./S-css/mybag.css" />
+    <!-- <link rel="stylesheet" href="../truculent-pie-36/login zara/footer.css"> -->
+
     <link rel="stylesheet" href="./nav.css" />
     <link
       rel="icon"
@@ -73,6 +75,32 @@
         <button>ADD TO BAG</button>
       </div>
     </div>
+    <div id="footer"></div>
   </body>
 </html>
 <script src="./S-scripts/mybag.js" type="module"></script>
+<script>
+  function showsidemenu() {
+    document.getElementById("sidebar").style.display = "grid";
+    document.getElementById("content").style.scroll = "";
+  }
+  function closesidemenu() {
+    document.getElementById("sidebar").style.display = "none";
+  }
+  function womensidebar() {
+    document.getElementById("sidemenudata-women").style.display = "flex";
+    document.getElementById("sidemenudata-men").style.display = "none";
+    document.getElementById("sidemenudata-kid").style.display = "none";
+  }
+  function mensidebar() {
+    document.getElementById("sidemenudata-men").style.display = "flex";
+    document.getElementById("sidemenudata-women").style.display = "none";
+    document.getElementById("sidemenudata-kid").style.display = "none";
+  }
+  function kidsidebar() {
+    document.getElementById("sidemenudata-kid").style.display = "flex";
+    document.getElementById("sidemenudata-women").style.display = "none";
+    document.getElementById("sidemenudata-men").style.display = "none";
+  }
+
+</script>

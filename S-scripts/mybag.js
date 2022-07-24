@@ -1,7 +1,11 @@
-
-import nav from "../navbar.js"
+import nav from "../navbar.js";
 // console.log(nav())
 document.getElementById("div_header").innerHTML = nav();
+
+import {footers} from "../login zara/components/footer.js"
+// console.log(footers);
+let footer_div = document.getElementById("footer");
+footer_div.innerHTML = footers();
 
 let mybag = JSON.parse(localStorage.getItem("myProducts"));
 // console.log(mybag);
@@ -17,10 +21,17 @@ p[2].innerText = `₹${mybag.price}`;
 p[3].innerText = "MRP incl. of all taxes";
 
 let mycart = JSON.parse(localStorage.getItem("S_cart")) || [];
+let loginfromls = JSON.parse(localStorage.getItem("userData")) || [];
+console.log(loginfromls.length);
 document.querySelector("#S_right>button").addEventListener("click", () => {
-  mycart.push(mybag);
-  localStorage.setItem("S_cart", JSON.stringify(mycart));
-  // console.log(mycart)
+  if (loginfromls.length == 0) {
+    alert("LOGIN TO PROCEED");
+    window.location.href = "./login zara/login.html";
+  } else {
+    mycart.push(mybag);
+    localStorage.setItem("S_cart", JSON.stringify(mycart));
+    // console.log(mycart)
+  }
 });
 
 document.querySelector("#S_middle>img").addEventListener("click", () => {

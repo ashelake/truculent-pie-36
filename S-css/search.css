@@ -5,7 +5,7 @@
 }
 
 #s-cat{
-    margin-top: 100px;
+    padding-top: 100px;
     /* border: 1px solid red; */
     display: flex;
     justify-content: center;
@@ -104,4 +104,6 @@ margin-top: 80px;
     padding:5px 10px;
     border-color: black;
 }
-
+#footer{
+    margin-top: 500px;
+}
