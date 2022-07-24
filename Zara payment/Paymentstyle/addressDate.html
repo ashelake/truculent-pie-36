@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #maina {
+        width: 80%;
+        margin: auto;
+        margin-top: 100px;
+        font-family: 'lato', sans-serif;
+    }
+
+    #select {
+        display: flex;
+        justify-content: space-between;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        padding: 00px 10px 0px 0px;
+    }
+
+    #select>div {
+        display: flex;
+    }
+
+    #select>div>div:nth-child(1) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #bold {
+        height: 10px;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    #select>div>div>button {
+        padding: 5px;
+        border-radius: 50%;
+        background-color: black;
+        cursor: pointer;
+
+    }
+
+    #bold+p {
+        font-size: 14px;
+        font-weight: lighter;
+        color: gray;
+        height: 10px;
+    }
+
+    #bold+p+p,
+    a {
+        font-size: 12px;
+        font-weight: lighter;
+        color: gray;
+        height: 3px;
+    }
+
+    #select>div:nth-child(2) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <div id="navbar"></div>
+    <div id="maina">
+        <h2>CHOOSE YOUR SHIPPING METHOD</h2>
+        <h2>HOME DELIVERY</h2>
+        <div id="select">
+            <div>
+                <div><button></button></div>
+                <div>
+                    <p id="bold">FRIDAY 29, JULY - WEDNESDAY 15, AUGUST ·
+                        ₹ 290.00</p>
+                    <p>TRANSPORT RESTRICTIONS MAY APPLY TO SOME AREAS</p>
+                    <p>FREE SHIPPING FOR ORDERS OVER ₹ 2,990</p>
+                    <a href="">DELIVERY TIME FRAMES</a>
+                </div>
+            </div>
+            <div>
+                ₹ 290.00
+            </div>
+        </div>
+    </div>
+    <div id="CONTINUE">
+        <div id="pr">
+            <div id="price">TOTAL : <span>2,290.00</span></div>
+            <button onclick="window.location.href = 'summary.html' ">
+                CONTINUE
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>
