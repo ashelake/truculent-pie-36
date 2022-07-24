@@ -19,4 +19,5 @@ document.querySelector("form").addEventListener("submit", function () {
   signup_data.push(data);
   localStorage.setItem("SignUp", JSON.stringify(signup_data));
   window.location.href = "login.html";
+  alert("Sign Up successful")
 });
