@@ -138,7 +138,13 @@
 
 </html>
 
-<script src="Paymentscript/payment.js"></script>
+<script src="../Paymentscript/payment.js"></script>
+<script>
+    let total = JSON.parse(localStorage.getItem('total'))
+console.log(total)
+    document.getElementById('price').innerHTML = `TOTAL : <span>${total}</span>`
+
+</script>
 <script src="../nav_script.js" type="module"></script>
 <script>
     function showsidemenu() {
